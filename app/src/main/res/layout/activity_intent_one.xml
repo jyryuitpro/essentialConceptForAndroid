@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Intent_One">
 
     <TextView
@@ -13,5 +14,45 @@
         android:gravity="center"
         android:background="@color/purple_200"
         android:text="암시적 인텐트" />
+
+    <TextView
+        android:id="@+id/intent_one"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="@color/purple_200"
+        android:text="명시적 인텐트1" />
+
+    <TextView
+        android:id="@+id/intent_two"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="@color/purple_200"
+        android:text="명시적 인텐트2" />
+
+    <TextView
+        android:id="@+id/intent_three"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/purple_200"
+        android:gravity="center"
+        android:text="명시적 인텐트 + data" />
+
+    <TextView
+        android:id="@+id/intent_four"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/purple_200"
+        android:gravity="center"
+        android:text="명시적 인텐트 + result" />
+
+    <TextView
+        android:id="@+id/intent_five"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/purple_200"
+        android:gravity="center"
+        android:text="명시적 인텐트 + ActivityResult API" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

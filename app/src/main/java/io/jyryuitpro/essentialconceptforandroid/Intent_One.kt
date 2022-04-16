@@ -1,9 +1,11 @@
 package io.jyryuitpro.essentialconceptforandroid
 
+import android.content.ComponentName
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 
 class Intent_One : AppCompatActivity() {
@@ -26,6 +28,44 @@ class Intent_One : AppCompatActivity() {
             val intent: Intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "010-9378-9025"))
 //            val intent: Intent = Intent(Intent.ACTION_PICK) -> 사진첩
             startActivity(intent)
+        }
+
+        // 명시적 인텐트 + ComponentName -> 엑티비티 전환
+        val intent_one: TextView = findViewById(R.id.intent_one)
+        intent_one.setOnClickListener {
+            val intent: Intent = Intent()
+            val componentName: ComponentName = ComponentName(
+                "io.jyryuitpro.essentialConceptForAndroid",
+                "io.jyryuitpro.essentialConceptForAndroid.Intent_Two"
+            )
+            intent.component = componentName
+            startActivity(intent)
+        }
+
+        // String을 사용하지 않고(위에서 처럼) 동일한 기능을 수행하는 코드
+        // 명시적 인텐트  -> 엑티비티 전환
+        // Context
+        //  - 문맥
+        // A엑티비티 -> B엑티비티
+        // apply: 초기화
+        // findViewById 위에 this? AppCompatActivity 즉 Context
+        (findViewById<TextView>(R.id.intent_two)).apply {
+            // apply 안에서 this? TextView
+            this.setOnClickListener {
+                startActivity(
+                    // 출발지 -> 목적지
+                    // this가 누군지 정확하게 표현해주어야 할 때, AppCompatActivity냐? TextView냐?
+                    Intent(this@Intent_One, Intent_Two::class.java)
+                )
+            }
+        }
+        // 명시적 인텐트 + data 전달
+        (findViewById<TextView>(R.id.intent_three)).apply {
+            this.setOnClickListener {
+                val intent = Intent(this@Intent_One, Intent_Two::class.java)
+                intent.putExtra("extra-data", "data")
+                startActivity(intent)
+            }
         }
     }
 }
