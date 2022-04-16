@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ActivityOne">
+
+    <TextView
+        android:id="@+id/one"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textSize="60dp"
+        android:text="Three -> One"
+        android:gravity="center"
+        android:background="@color/black"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/two"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textSize="60dp"
+        android:text="Three -> Two"
+        android:gravity="center"
+        android:background="@color/black"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/three"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textSize="60dp"
+        android:text="Three -> Three"
+        android:gravity="center"
+        android:background="@color/black"
+        android:textColor="@color/white" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>
