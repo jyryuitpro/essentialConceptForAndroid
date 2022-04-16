@@ -39,4 +39,12 @@
         android:gravity="center"
         android:text="명시적 인텐트 + data" />
 
+    <TextView
+        android:id="@+id/intent_four"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/purple_200"
+        android:gravity="center"
+        android:text="명시적 인텐트 + result" />
+
 </androidx.appcompat.widget.LinearLayoutCompat>

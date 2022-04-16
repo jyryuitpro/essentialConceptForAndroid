@@ -25,5 +25,15 @@ class Intent_Two : AppCompatActivity() {
         if (data != null) {
             Log.d("dataa", data)
         }
+
+        (findViewById<TextView>(R.id.finish)).apply {
+            this.setOnClickListener {
+                val intent: Intent = Intent()
+                intent.putExtra("result", "success")
+                setResult(RESULT_OK, intent)
+                // Intent_One -> Intent_Two(종료) -> Intent_One
+                finish()
+            }
+        }
     }
 }
