@@ -11,6 +11,7 @@
         android:theme="@style/Theme.EssentialConceptForAndroid">
         <activity
             android:name=".ActivityThree"
+            android:launchMode="singleInstance"
             android:exported="false" />
         <activity
             android:name=".ActivityTwo"
