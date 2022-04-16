@@ -59,11 +59,13 @@ class Intent_One : AppCompatActivity() {
                 )
             }
         }
+
         // 명시적 인텐트 + data 전달
         (findViewById<TextView>(R.id.intent_three)).apply {
             this.setOnClickListener {
                 val intent = Intent(this@Intent_One, Intent_Two::class.java)
-                intent.putExtra("extra-data", "data")
+                // key, value
+                intent.putExtra("extra-data", "data-one")
                 startActivity(intent)
             }
         }
