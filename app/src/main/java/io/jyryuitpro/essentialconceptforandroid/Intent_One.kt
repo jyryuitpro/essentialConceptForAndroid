@@ -24,6 +24,7 @@ class Intent_One : AppCompatActivity() {
         val implicit_intent: TextView = findViewById(R.id.implicit_intent)
         implicit_intent.setOnClickListener {
             val intent: Intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "010-9378-9025"))
+//            val intent: Intent = Intent(Intent.ACTION_PICK) -> 사진첩
             startActivity(intent)
         }
     }
