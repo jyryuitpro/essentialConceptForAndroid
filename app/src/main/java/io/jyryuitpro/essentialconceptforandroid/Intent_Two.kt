@@ -35,5 +35,11 @@ class Intent_Two : AppCompatActivity() {
                 finish()
             }
         }
+
+        val imageView = findViewById<ImageView>(R.id.imageView)
+        val uri = Uri.parse(
+            intent.getParcelableExtra<Parcelable>(Intent.EXTRA_STREAM).toString()
+        )
+        imageView.setImageURI(uri)
     }
 }
