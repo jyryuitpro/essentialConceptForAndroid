@@ -47,4 +47,12 @@
         android:gravity="center"
         android:text="명시적 인텐트 + result" />
 
+    <TextView
+        android:id="@+id/intent_five"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/purple_200"
+        android:gravity="center"
+        android:text="명시적 인텐트 + ActivityResult API" />
+
 </androidx.appcompat.widget.LinearLayoutCompat>
