@@ -19,6 +19,8 @@ class ActivityTwo : AppCompatActivity() {
         }
 
         (findViewById<TextView>(R.id.three)).setOnClickListener {
+//            val intent = Intent(this@ActivityTwo, ActivityThree::class.java)
+//            intent.setFlags()
             startActivity(Intent(this@ActivityTwo, ActivityThree::class.java))
         }
     }
