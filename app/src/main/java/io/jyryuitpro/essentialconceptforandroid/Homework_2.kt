@@ -1,16 +1,21 @@
 package io.jyryuitpro.essentialconceptforandroid
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.webkit.WebResourceRequest
 import android.webkit.WebView
+import android.webkit.WebViewClient
 import android.widget.EditText
 import android.widget.TextView
 import androidx.core.widget.doAfterTextChanged
 import androidx.core.widget.doBeforeTextChanged
 import androidx.core.widget.doOnTextChanged
+import java.lang.Exception
 
 class Homework_2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,6 +23,23 @@ class Homework_2 : AppCompatActivity() {
         setContentView(R.layout.activity_homework2)
 
         val webview = findViewById<WebView>(R.id.webview)
+        webview.setWebViewClient(object: WebViewClient() {
+            override fun shouldOverrideUrlLoading(
+                view: WebView?,
+                request: WebResourceRequest?
+            ): Boolean {
+                // true -> 나의 앱이 주도권을 가져오지 않는다
+                // false -> 나의 앱이 주도권을 가져오겠다
+                return false
+            }
+        })
+
+        try {
+            webview.loadUrl(intent.data!!.toString())
+        } catch (exception: Exception) {
+
+        }
+
         val urlPrefix = "https://"
         var finalUrl = ""
 
@@ -47,8 +69,10 @@ class Homework_2 : AppCompatActivity() {
         val open = findViewById<TextView>(R.id.open)
         open.setOnClickListener {
             val url = address.text.toString()
-            Log.d("testt", url)
-            webview.loadUrl(finalUrl)
+//            Log.d("testt", url)
+//            webview.loadUrl(finalUrl)
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            startActivity(intent)
         }
     }
 }
